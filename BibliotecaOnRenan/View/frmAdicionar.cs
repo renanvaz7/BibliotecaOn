@@ -29,12 +29,11 @@ namespace BibliotecaOnRenan.View
             txtNomeAutor.Text = "";
             txtGenero.Text = "";
             txtSinopse.Text = "";
-            txtDataLancamento.Text = "";
         }
 
         private void ibtnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtNomeLivro.Text != "" && txtNomeAutor.Text != "" && txtGenero.Text != "")
+            if (txtNomeLivro.Text != "" && txtNomeAutor.Text != "" && txtGenero.Text != "" && txtSinopse.Text != "")
             {
                 l.ID = Id;
                 l.NomeLivro = txtNomeLivro.Text;
@@ -55,5 +54,89 @@ namespace BibliotecaOnRenan.View
                 MessageBox.Show("Insira os produtos!!!");
             }
         }
+
+        private void txtNomeLivro_Enter(object sender, EventArgs e)
+        {
+            string textoLivro = "Nome do livro";
+            TxtEnter(txtNomeLivro, textoLivro);
+        }
+
+        private void txtNomeLivro_Leave(object sender, EventArgs e)
+        {
+            string textoLivro = "Nome do livro";
+            TxtLeave(txtNomeLivro, textoLivro);
+        }
+
+        private void txtNomeAutor_Enter(object sender, EventArgs e)
+        {
+            string textoAutor = "Nome do autor";
+            TxtEnter(txtNomeAutor, textoAutor);
+        }
+
+        private void txtNomeAutor_Leave(object sender, EventArgs e)
+        {
+            string textoAutor = "Nome do autor";
+            TxtLeave(txtNomeAutor, textoAutor);
+        }
+
+        private void txtDataLancamento_Enter(object sender, EventArgs e)
+        {
+            string textoData = "Data de lançamento";
+            TxtEnter(txtDataLancamento, textoData);
+        }
+
+        private void txtDataLancamento_Leave(object sender, EventArgs e)
+        {
+            string textoData = "Data de lançamento";
+            TxtLeave(txtDataLancamento, textoData);
+        }
+
+        private void txtGenero_Enter(object sender, EventArgs e)
+        {
+            string textoGenero = "Gênero";
+            TxtEnter(txtGenero, textoGenero);
+        }
+
+        private void txtGenero_Leave(object sender, EventArgs e)
+        {
+            string textoGenero = "Gênero";
+            TxtLeave(txtGenero, textoGenero);
+        }
+
+        private void txtSinopse_Enter(object sender, EventArgs e)
+        {
+            string textoSinopse = "Sinopse";
+            TxtEnter(txtSinopse, textoSinopse);
+        }
+
+        private void txtSinopse_Leave(object sender, EventArgs e)
+        {
+            string textoSinopse = "Sinopse";
+            TxtLeave(txtSinopse, textoSinopse);
+        }
+
+        private void TxtEnter(TextBox txtTexto, string texto)
+        {
+            if (txtTexto.Text == texto)
+            {
+                txtTexto.Text = "";
+            }
+            else if (txtTexto.Text == "")
+            {
+                txtTexto.Text = texto;
+            }
+        }
+
+        private void TxtLeave(TextBox txtTexto, string texto)
+        {
+            if (txtTexto.Text == "")
+            {
+                txtTexto.Text = texto;
+            }
+            else if (txtTexto.Text == texto)
+            {
+                txtTexto.Text = "";
+            }
+        }        
     }
 }

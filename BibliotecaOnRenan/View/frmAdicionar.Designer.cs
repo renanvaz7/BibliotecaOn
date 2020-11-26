@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.txtNomeLivro = new System.Windows.Forms.TextBox();
-            this.txtNomeAutor = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtSinopse = new System.Windows.Forms.TextBox();
-            this.txtDataLancamento = new System.Windows.Forms.TextBox();
             this.ibtnSalvar = new FontAwesome.Sharp.IconButton();
+            this.txtNomeAutor = new System.Windows.Forms.TextBox();
+            this.txtDataLancamento = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNomeLivro
@@ -47,18 +47,8 @@
             this.txtNomeLivro.Size = new System.Drawing.Size(574, 24);
             this.txtNomeLivro.TabIndex = 0;
             this.txtNomeLivro.Text = "Nome do livro";
-            // 
-            // txtNomeAutor
-            // 
-            this.txtNomeAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.txtNomeAutor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomeAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeAutor.ForeColor = System.Drawing.Color.White;
-            this.txtNomeAutor.Location = new System.Drawing.Point(126, 91);
-            this.txtNomeAutor.Name = "txtNomeAutor";
-            this.txtNomeAutor.Size = new System.Drawing.Size(574, 24);
-            this.txtNomeAutor.TabIndex = 1;
-            this.txtNomeAutor.Text = "Nome do autor";
+            this.txtNomeLivro.Enter += new System.EventHandler(this.txtNomeLivro_Enter);
+            this.txtNomeLivro.Leave += new System.EventHandler(this.txtNomeLivro_Leave);
             // 
             // txtGenero
             // 
@@ -71,6 +61,8 @@
             this.txtGenero.Size = new System.Drawing.Size(574, 24);
             this.txtGenero.TabIndex = 2;
             this.txtGenero.Text = "Gênero";
+            this.txtGenero.Enter += new System.EventHandler(this.txtGenero_Enter);
+            this.txtGenero.Leave += new System.EventHandler(this.txtGenero_Leave);
             // 
             // txtSinopse
             // 
@@ -84,18 +76,8 @@
             this.txtSinopse.Size = new System.Drawing.Size(574, 165);
             this.txtSinopse.TabIndex = 3;
             this.txtSinopse.Text = "Sinopse";
-            // 
-            // txtDataLancamento
-            // 
-            this.txtDataLancamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.txtDataLancamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDataLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataLancamento.ForeColor = System.Drawing.Color.White;
-            this.txtDataLancamento.Location = new System.Drawing.Point(126, 148);
-            this.txtDataLancamento.Name = "txtDataLancamento";
-            this.txtDataLancamento.Size = new System.Drawing.Size(574, 24);
-            this.txtDataLancamento.TabIndex = 4;
-            this.txtDataLancamento.Text = "Data de lançamento";
+            this.txtSinopse.Enter += new System.EventHandler(this.txtSinopse_Enter);
+            this.txtSinopse.Leave += new System.EventHandler(this.txtSinopse_Leave);
             // 
             // ibtnSalvar
             // 
@@ -108,7 +90,7 @@
             this.ibtnSalvar.IconColor = System.Drawing.Color.White;
             this.ibtnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnSalvar.Location = new System.Drawing.Point(285, 483);
+            this.ibtnSalvar.Location = new System.Drawing.Point(288, 469);
             this.ibtnSalvar.Name = "ibtnSalvar";
             this.ibtnSalvar.Size = new System.Drawing.Size(266, 64);
             this.ibtnSalvar.TabIndex = 5;
@@ -117,17 +99,45 @@
             this.ibtnSalvar.UseVisualStyleBackColor = false;
             this.ibtnSalvar.Click += new System.EventHandler(this.ibtnSalvar_Click);
             // 
+            // txtNomeAutor
+            // 
+            this.txtNomeAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
+            this.txtNomeAutor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomeAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeAutor.ForeColor = System.Drawing.Color.White;
+            this.txtNomeAutor.Location = new System.Drawing.Point(126, 92);
+            this.txtNomeAutor.Name = "txtNomeAutor";
+            this.txtNomeAutor.Size = new System.Drawing.Size(574, 24);
+            this.txtNomeAutor.TabIndex = 6;
+            this.txtNomeAutor.Text = "Nome do autor";
+            this.txtNomeAutor.Enter += new System.EventHandler(this.txtNomeAutor_Enter);
+            this.txtNomeAutor.Leave += new System.EventHandler(this.txtNomeAutor_Leave);
+            // 
+            // txtDataLancamento
+            // 
+            this.txtDataLancamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
+            this.txtDataLancamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataLancamento.ForeColor = System.Drawing.Color.White;
+            this.txtDataLancamento.Location = new System.Drawing.Point(126, 148);
+            this.txtDataLancamento.Name = "txtDataLancamento";
+            this.txtDataLancamento.Size = new System.Drawing.Size(574, 24);
+            this.txtDataLancamento.TabIndex = 7;
+            this.txtDataLancamento.Text = "Data de lançamento";
+            this.txtDataLancamento.Enter += new System.EventHandler(this.txtDataLancamento_Enter);
+            this.txtDataLancamento.Leave += new System.EventHandler(this.txtDataLancamento_Leave);
+            // 
             // frmAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(847, 573);
-            this.Controls.Add(this.ibtnSalvar);
             this.Controls.Add(this.txtDataLancamento);
+            this.Controls.Add(this.txtNomeAutor);
+            this.Controls.Add(this.ibtnSalvar);
             this.Controls.Add(this.txtSinopse);
             this.Controls.Add(this.txtGenero);
-            this.Controls.Add(this.txtNomeAutor);
             this.Controls.Add(this.txtNomeLivro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdicionar";
@@ -139,10 +149,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNomeLivro;
-        private System.Windows.Forms.TextBox txtNomeAutor;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtSinopse;
-        private System.Windows.Forms.TextBox txtDataLancamento;
         private FontAwesome.Sharp.IconButton ibtnSalvar;
+        private System.Windows.Forms.TextBox txtNomeAutor;
+        private System.Windows.Forms.TextBox txtDataLancamento;
     }
 }
