@@ -14,9 +14,6 @@ namespace BibliotecaOnRenan.View
 {
     public partial class frmListar : Form
     {
-        int Id = 0;
-        Livro l = new Livro();
-
         public frmListar()
         {
             InitializeComponent();

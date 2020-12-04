@@ -160,13 +160,21 @@
     <Compile Include="Controller\Config\ContextFactory.cs" />
     <Compile Include="Controller\Config\LivrariaContext.cs" />
     <Compile Include="Controller\Interface\ILivro.cs" />
+    <Compile Include="Controller\Interface\ILogin.cs" />
     <Compile Include="Controller\LivroController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\Mapping\LivroMap.cs" />
+    <Compile Include="Controller\Mapping\UsuarioMap.cs" />
     <Compile Include="Migrations\20201125180530_firstBd.cs" />
     <Compile Include="Migrations\20201125180530_firstBd.designer.cs">
       <DependentUpon>20201125180530_firstBd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201128181414_login.cs" />
+    <Compile Include="Migrations\20201128181414_login.designer.cs">
+      <DependentUpon>20201128181414_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LivrariaContextModelSnapshot.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="View\frmEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +186,12 @@
     </Compile>
     <Compile Include="View\frmListar.Designer.cs">
       <DependentUpon>frmListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -194,6 +208,12 @@
     <Compile Include="View\frmAdicionar.Designer.cs">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmRecuperarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRecuperarSenha.Designer.cs">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmRemover.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmListar.resx">
       <DependentUpon>frmListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

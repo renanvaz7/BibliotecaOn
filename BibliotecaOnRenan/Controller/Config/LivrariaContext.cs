@@ -1,4 +1,4 @@
-﻿using BibliotecaOnRenan.Controller.Mapping;
+﻿ using BibliotecaOnRenan.Controller.Mapping;
 using BibliotecaOnRenan.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +12,7 @@ namespace BibliotecaOnRenan.Controller.Config
     class LivrariaContext : DbContext
     {
         public DbSet<Livro> Livros { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         public LivrariaContext(DbContextOptions<LivrariaContext> options) : base(options){}
 
@@ -26,6 +27,7 @@ namespace BibliotecaOnRenan.Controller.Config
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Livro>(new LivroMap().Configure);
+            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
         }
     }
 }
