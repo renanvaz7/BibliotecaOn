@@ -10,7 +10,7 @@ namespace BibliotecaOnRenan.Controller.Interface
     interface ILogin
     {
         void AdicionarUsuario(Usuario u);
-        Usuario BuscarLogin(Usuario registro);
+        bool Login(string login, string email, string senha);
         Usuario BuscarID(int id);
         IList<Usuario> AllUsuarios();
     }

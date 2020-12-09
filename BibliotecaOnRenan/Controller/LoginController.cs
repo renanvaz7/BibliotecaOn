@@ -34,14 +34,23 @@ namespace BibliotecaOnRenan.Controller
             return context.Usuarios.Find(id);
         }
 
-        public Usuario BuscarLogin(Usuario registro)
+        public bool Login(string login, string email, string senha)
         {
-            return context.Usuarios.FirstOrDefault(u => u.NomeUsuario == registro.NomeUsuario && u.Email == registro.Email && u.Senha == registro.Senha);
+            var db = new LivrariaContext();
+
+            var usuario = db.Usuarios.FirstOrDefault(u => u.NomeUsuario == login && u.Senha == senha || u.Email == email && u.Senha == senha);
+
+            if (usuario != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Dispose()
         {
             context.Dispose();
         }
+
     }
 }

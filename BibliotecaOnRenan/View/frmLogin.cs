@@ -93,21 +93,28 @@ namespace BibliotecaOnRenan.View
         {
             if (txtNomeUsuario.Text != "" && txtSenha.Text != "")
             {
-                u.NomeUsuario = txtNomeUsuario.Text;
-                u.Senha = txtSenha.Text;
+                string nomeUsuario = txtNomeUsuario.Text;
+                string email = txtNomeUsuario.Text;
+                string senha = txtSenha.Text;
 
                 using (var context = new LoginController())
                 {
-                    context.BuscarLogin(u);                    
-                    this.Hide();
-                    MessageBox.Show("Login Efetuado com sucesso");
-                    Form form = new frmPrincipal();
-                    form.ShowDialog();
-                }
+                    if (!context.Login(nomeUsuario, email, senha))
+                    {
+                        MessageBox.Show("Login ou senha incorretos");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        MessageBox.Show("Login Efetuado com sucesso");
+                        Form form = new frmPrincipal();
+                        form.ShowDialog();
+                    }
+                }                               
             }
             else
             {
-                MessageBox.Show("Informe os dados");
+                MessageBox.Show("Por favor informe os dados");
             }
         }
 
